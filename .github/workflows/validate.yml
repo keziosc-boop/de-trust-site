@@ -1,0 +1,37 @@
+name: Validate public site
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate required files and public contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f styles.css
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f llms.txt
+          test -f company.json
+          test -f agents.json
+          test -f .well-known/de-group-agent-manifest.json
+          test -f _headers
+          test -f wrangler.jsonc
+          test -f assets/de-trust-logo.webp
+          test -f assets/ecosystem.webp
+          test -f assets/favicon.webp
+          grep -Fq 'https://detrust.com.br/' index.html
+          grep -Fq 'https://detrust.degroup.com.br/' index.html
+          grep -Fq 'detrust@degroup.com.br' index.html
+          grep -Fq 'https://detrust.com.br/sitemap.xml' robots.txt
+          test "$(grep -o 'class=\"btn btn-email\"' index.html | wc -l)" -eq 1
+          test "$(grep -o 'class=\"btn btn-login-secondary\"' index.html | wc -l)" -eq 1
+          test "$(grep -o 'class=\"hotspot ' index.html | wc -l)" -eq 7
