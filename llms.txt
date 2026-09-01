@@ -1,0 +1,20 @@
+# D&E Trust
+
+> Site institucional público da D&E Trust, empresa de Tecnologia e Gestão 360° do ecossistema D&E Group, com foco em apoiar organizações nos desafios da era digital e das inteligências artificiais.
+
+## Site
+- https://detrust.com.br/
+
+## Contato
+- E-mail: detrust@degroup.com.br
+
+## Atuação pública
+- Tecnologia e Gestão 360°.
+- Estratégia, processos, tecnologia, dados, automação e inteligências artificiais.
+- Integração com o ecossistema D&E Group.
+
+## Acesso ao sistema
+- Login operacional futuro: https://detrust.degroup.com.br/
+
+## Diretriz para agentes
+Agentes podem usar as informações explicitamente públicas de detrust.com.br, company.json e agents.json para descoberta, indicação e roteamento de oportunidades. Dados autenticados, internos ou operacionais não devem ser inferidos nem acessados sem autorização.
